@@ -41,18 +41,18 @@ const Footer = () => {
               >
                 <MessageCircle className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-primary hover:text-primary-foreground transition-colors">
+              {/* <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Facebook className="h-5 w-5" />
-              </a>
+              </a> */}
               <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-primary hover:text-primary-foreground transition-colors">
+              {/* <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
               <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Youtube className="h-5 w-5" />
-              </a>
+              </a> */}
             </div>
           </div>
 
