@@ -180,7 +180,7 @@ const Packages = () => {
                     Cannot connect to API. Showing mock data.
                   </p>
                   <p className="text-xs text-yellow-700 dark:text-yellow-300 mt-1">
-                    API URL: {import.meta.env.VITE_API_URL || 'http://travelairwings.com/api'}
+                    API URL: {import.meta.env.VITE_API_URL || 'https://travelairwings.com/api'}
                     {error && (
                       <span className="block mt-1">Error: {error.message}</span>
                     )}
@@ -204,7 +204,7 @@ const Packages = () => {
                   variant="outline"
                   size="sm"
                   onClick={() => {
-                    window.open('http://travelairwings.com/api/health', '_blank');
+                    window.open('https://travelairwings.com/api/health', '_blank');
                   }}
                 >
                   Test API
