@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || 'https://travelairwings.com/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://travelairwings.com/api';
 
 class ApiClient {
   private baseUrl: string;
