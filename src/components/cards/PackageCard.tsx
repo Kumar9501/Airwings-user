@@ -33,7 +33,7 @@ const PackageCard = ({
     }
     // Relative path from backend uploads
     if (image.startsWith('/uploads/')) {
-      return `http://localhost:3001${image}`;
+      return `http://travelairwings.com${image}`;
     }
     return image;
   };
