@@ -48,10 +48,10 @@ Should return: `{"status":"ok","timestamp":"..."}`
 ### 6. Verify Environment Variables
 Check if `.env` file exists in root directory:
 ```env
-VITE_API_URL=http://localhost:3001/api
+VITE_API_URL=/api
 ```
 
-If not, create it or the app will use default: `http://localhost:3001/api`
+If not, create it or the app will use default: `/api`
 
 ### 7. Common Issues
 
