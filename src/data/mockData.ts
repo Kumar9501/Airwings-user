@@ -1,7 +1,10 @@
 import baliBg from "@/assets/destination-bali.jpg";
-import santoriniBg from "@/assets/destination-santorini.jpg";
-import dubaiBg from "@/assets/destination-dubai.jpg";
 import maldivesBg from "@/assets/destination-maldives.jpg";
+import dubaiImage from "@/assets/Dubai.jpeg";
+import dubaiImage2 from "@/assets/Dubai2.jpeg";
+import dubaiImage3 from "@/assets/Dubai3.jpeg";
+import dubaiImage4 from "@/assets/Dubai4.jpeg";
+import dubaiImage5 from "@/assets/Dubai5.jpeg";
 
 export interface Package {
   id: string;
@@ -63,16 +66,16 @@ export const packages: Package[] = [
   },
   {
     id: "2",
-    title: "Santorini Dream Escape",
-    location: "Santorini",
-    country: "Greece",
+    title: "Thailand Island Escape",
+    location: "Phuket & Krabi",
+    country: "Thailand",
     duration: "5 Days / 4 Nights",
     price: 7999,
-    image: santoriniBg,
+    image: dubaiImage2,
     rating: 4.8,
     tag: "Private",
-    description: "Discover the romantic beauty of Santorini with white-washed buildings and stunning sunsets over the Aegean Sea.",
-    inclusions: ["Luxury Hotel", "All Meals", "Wine Tasting", "Sunset Cruise", "Photography Tour"],
+    description: "Enjoy Thailand's beaches, island hopping, night markets, and relaxed tropical stays.",
+    inclusions: ["Beach Resort", "Daily Breakfast", "Island Hopping", "Local Transfers", "City Tour"],
     featured: true,
   },
   {
@@ -82,7 +85,7 @@ export const packages: Package[] = [
     country: "UAE",
     duration: "4 Days / 3 Nights",
     price: 3499,
-    image: dubaiBg,
+    image: dubaiImage,
     rating: 4.7,
     tag: "Limited Seats",
     slots: 2,
@@ -121,15 +124,15 @@ export const packages: Package[] = [
   },
   {
     id: "6",
-    title: "Greek Island Hopping",
-    location: "Athens & Islands",
-    country: "Greece",
-    duration: "10 Days / 9 Nights",
-    price: 11999,
-    image: santoriniBg,
+    title: "Thailand Family Getaway",
+    location: "Bangkok & Pattaya",
+    country: "Thailand",
+    duration: "6 Days / 5 Nights",
+    price: 5799,
+    image: dubaiImage3,
     rating: 4.9,
-    description: "Explore multiple Greek islands including Santorini, Mykonos, and Athens.",
-    inclusions: ["Island Hotels", "Ferry Transfers", "Guided Tours", "Traditional Meals", "Beach Access"],
+    description: "A family-friendly Thailand break with shopping, city highlights, beach time, and theme parks.",
+    inclusions: ["Hotel Stay", "Airport Transfers", "City Tour", "Beach Visit", "Theme Park Tickets"],
     featured: false,
   },
 ];
@@ -144,17 +147,17 @@ export const destinations: Destination[] = [
     packageCount: 12,
   },
   {
-    id: "santorini",
-    name: "Santorini",
-    country: "Greece",
-    image: santoriniBg,
-    packageCount: 8,
+    id: "thailand",
+    name: "Thailand",
+    country: "Thailand",
+    image: dubaiImage4,
+    packageCount: 10,
   },
   {
     id: "dubai",
     name: "Dubai",
     country: "UAE",
-    image: dubaiBg,
+    image: dubaiImage5,
     packageCount: 15,
   },
   {

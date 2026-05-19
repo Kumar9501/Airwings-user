@@ -6,10 +6,12 @@ import Footer from "@/components/layout/Footer";
 import ServiceCard from "@/components/cards/ServiceCard";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-landscape.jpg";
-import baliImage from "@/assets/destination-bali.jpg";
-import santoriniImage from "@/assets/destination-santorini.jpg";
 import dubaiImage from "@/assets/destination-dubai.jpg";
-import maldivesImage from "@/assets/destination-maldives.jpg";
+import dubaiTrip1 from "@/assets/Dubai.jpeg";
+import dubaiTrip2 from "@/assets/Dubai2.jpeg";
+import dubaiTrip3 from "@/assets/Dubai3.jpeg";
+import dubaiTrip4 from "@/assets/Dubai4.jpeg";
+import dubaiTrip5 from "@/assets/Dubai5.jpeg";
 
 const iconMap: Record<string, any> = {
   FileCheck,
@@ -54,12 +56,12 @@ const services = [
 ];
 
 const galleryImages = [
-  { src: baliImage, alt: "Bali Rice Terraces" },
-  { src: santoriniImage, alt: "Santorini Greece" },
+  { src: dubaiTrip1, alt: "Dubai City View" },
+  { src: dubaiTrip2, alt: "Dubai Travel Moment" },
+  { src: dubaiTrip3, alt: "Dubai Experience" },
+  { src: dubaiTrip4, alt: "Dubai Holiday" },
+  { src: dubaiTrip5, alt: "Dubai Sightseeing" },
   { src: dubaiImage, alt: "Dubai Skyline" },
-  { src: maldivesImage, alt: "Maldives Paradise" },
-  { src: heroImage, alt: "Mongolia Yurt Camp" },
-  { src: baliImage, alt: "Bali Temple" },
 ];
 
 const Services = () => {

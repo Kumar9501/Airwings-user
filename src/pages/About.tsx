@@ -4,8 +4,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { aboutContent } from "@/data/mockData";
 import heroImage from "@/assets/hero-landscape.jpg";
-import baliImage from "@/assets/destination-bali.jpg";
-import santoriniImage from "@/assets/destination-santorini.jpg";
+import travelImage from "@/assets/Dubai2.jpeg";
+import journeyImage from "@/assets/Dubai5.jpeg";
 
 const About = () => {
   return (
@@ -90,13 +90,13 @@ const About = () => {
             >
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src={baliImage}
-                  alt="Bali"
+                  src={travelImage}
+                  alt="Curated travel experience"
                   className="rounded-2xl shadow-xl w-full h-64 object-cover"
                 />
                 <img
-                  src={santoriniImage}
-                  alt="Santorini"
+                  src={journeyImage}
+                  alt="Travel journey"
                   className="rounded-2xl shadow-xl w-full h-64 object-cover mt-8"
                 />
               </div>

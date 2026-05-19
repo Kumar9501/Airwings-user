@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Search, Filter, MapPin, ChevronDown, RefreshCw } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PackageCard from "@/components/cards/PackageCard";
@@ -16,6 +17,7 @@ const Packages = () => {
   const [selectedDuration, setSelectedDuration] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("");
   const [showFilters, setShowFilters] = useState(false);
+  const [searchParams] = useSearchParams();
   const queryClient = useQueryClient();
 
   const { data: packagesData, isLoading, error, refetch, isError } = useQuery({
@@ -66,6 +68,9 @@ const Packages = () => {
       if (packagesData.length === 0) {
         console.log('ℹ️ API returned empty array - no packages in database yet');
       }
+      if (packagesData.length === 0) {
+        return mockPackages;
+      }
       return packagesData;
     } else if (isError && packagesData === undefined) {
       // API failed and we have no data - use mock as fallback
@@ -78,6 +83,25 @@ const Packages = () => {
       return [];
     }
   }, [packagesData, isError, error]);
+
+  useEffect(() => {
+    const destination = searchParams.get("destination");
+    const query = searchParams.get("q");
+
+    if (destination) {
+      const match = packages.find((pkg) => {
+        const normalizedDestination = destination.toLowerCase();
+        return [pkg.country, pkg.location, pkg.title].some((value) =>
+          value.toLowerCase().includes(normalizedDestination)
+        );
+      });
+      setSelectedLocation(match?.country || "");
+    }
+
+    if (query) {
+      setSearchQuery(query);
+    }
+  }, [searchParams, packages]);
 
   // Get unique locations
   const locations = useMemo(() => {
@@ -180,7 +204,7 @@ const Packages = () => {
                     Cannot connect to API. Showing mock data.
                   </p>
                   <p className="text-xs text-yellow-700 dark:text-yellow-300 mt-1">
-                    API URL: {import.meta.env.VITE_API_URL || 'http://localhost:3001/api'}
+                    API URL: {'http://localhost:3001/api'}
                     {error && (
                       <span className="block mt-1">Error: {error.message}</span>
                     )}

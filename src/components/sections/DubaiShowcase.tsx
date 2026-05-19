@@ -7,6 +7,7 @@ import burjKhalifaVideo from "@/assets/videos/burj-khalifa.mp4";
 import palmJumeirahVideo from "@/assets/videos/palm-jumeirah.mp4";
 import burjAlArabVideo from "@/assets/videos/burj-al-arab.mp4";
 import dubaiMarinaVideo from "@/assets/videos/dubai-marina.mp4";
+import dubaiHighlightsVideo from "@/assets/Dubai6.mp4";
 
 interface Landmark {
   id: string;
@@ -39,6 +40,12 @@ const landmarks: Landmark[] = [
     name: "Dubai Marina",
     description: "Stunning waterfront district",
     video: dubaiMarinaVideo,
+  },
+  {
+    id: "dubai-highlights",
+    name: "Dubai Highlights",
+    description: "City moments and travel views",
+    video: dubaiHighlightsVideo,
   },
 ];
 
@@ -85,7 +92,7 @@ const DubaiShowcase = () => {
         </div>
 
         {/* Video Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {landmarks.map((landmark, index) => (
             <motion.div
               key={landmark.id}

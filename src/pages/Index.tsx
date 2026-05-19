@@ -15,7 +15,7 @@ import { packages as mockPackages, destinations, testimonials, heroContent } fro
 import heroImage from "@/assets/dubai.png";
 
 const Index = () => {
-  const { data: packagesData, isLoading, error } = useQuery({
+  const { data: packagesData } = useQuery({
     queryKey: ['packages', true],
     queryFn: () => api.getPackages(true),
     staleTime: 0,
@@ -24,9 +24,12 @@ const Index = () => {
     retry: 1,
   });
 
-  // Use API data if available, otherwise fallback to mock data
-  const packages = packagesData !== undefined ? packagesData : (error ? mockPackages : []);
-  const featuredPackages = packages.filter((pkg) => pkg.featured);
+  const packages = packagesData !== undefined && packagesData.length > 0 ? packagesData : mockPackages;
+  const featuredPackages = packages.filter((pkg) => pkg.featured).slice(0, 4);
+
+  const scrollToDestinations = () => {
+    document.getElementById("popular-destinations")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen overflow-hidden">
@@ -112,7 +115,9 @@ const Index = () => {
         </div>
 
         {/* Scroll indicator - Enhanced */}
-        <motion.div
+        <motion.button
+          type="button"
+          onClick={scrollToDestinations}
           className="absolute bottom-10 left-1/2 -translate-x-1/2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: [0, 8, 0] }}
@@ -125,7 +130,7 @@ const Index = () => {
             <span className="text-xs text-white/70 uppercase tracking-widest">Explore</span>
             <ChevronDown className="h-4 w-4 text-primary" />
           </div>
-        </motion.div>
+        </motion.button>
       </section>
 
       {/* Trust Banner - Enhanced */}
@@ -209,7 +214,7 @@ const Index = () => {
       </section>
 
       {/* Popular Destinations - Enhanced */}
-      <section className="section-padding bg-muted relative overflow-hidden">
+      <section id="popular-destinations" className="section-padding bg-muted relative overflow-hidden scroll-mt-24">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         <div className="container-custom relative">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">

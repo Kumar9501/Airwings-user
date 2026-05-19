@@ -1,8 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Menu, X, Search, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X, MessageCircle } from "lucide-react";
 import logoImage from "@/assets/air-wings-logo.png";
 import { getWhatsAppUrl } from "@/utils/whatsapp";
 
@@ -11,6 +10,7 @@ const navLinks = [
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Packages", path: "/packages" },
+  { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -27,13 +27,13 @@ const Header = () => {
             <img 
               src={logoImage} 
               alt="AIR WINGS TOUR & TRAVEL" 
-              className="h-10 w-auto object-contain"
+              className="h-16 w-auto object-contain"
               onError={(e) => {
                 // Fallback to text if image fails to load
                 (e.target as HTMLImageElement).style.display = 'none';
               }}
             />
-            <span className="text-xl font-display font-bold text-header-foreground hidden sm:block">
+            <span className="text-xl font-display font-bold text-header-foreground hidden md:block">
               <span className="text-[#14B8A6]">AIR</span> <span className="text-header-foreground">WINGS</span>
               <span className="block text-xs font-normal text-header-foreground/70">TOUR & TRAVEL</span>
             </span>

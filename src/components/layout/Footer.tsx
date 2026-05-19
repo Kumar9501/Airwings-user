@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Youtube, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, MessageCircle, Clock } from "lucide-react";
 import logoImage from "@/assets/air-wings-logo.png";
 import { getWhatsAppUrl } from "@/utils/whatsapp";
 
 const Footer = () => {
+  const quickLinks = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Packages", path: "/packages" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact" },
+  ];
+
   return (
     <footer className="bg-secondary text-secondary-foreground">
       {/* Main Footer */}
@@ -15,7 +24,7 @@ const Footer = () => {
               <img 
                 src={logoImage} 
                 alt="AIR WINGS TOUR & TRAVEL" 
-                className="h-12 w-auto object-contain"
+                className="h-16 w-auto object-contain"
                 onError={(e) => {
                   (e.target as HTMLImageElement).style.display = 'none';
                 }}
@@ -60,13 +69,13 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              {["Home", "About Us", "Services", "Packages", "Contact"].map((item) => (
-                <li key={item}>
+              {quickLinks.map((item) => (
+                <li key={item.path}>
                   <Link 
-                    to={`/${item.toLowerCase().replace(" ", "-")}`} 
+                    to={item.path}
                     className="text-secondary-foreground/70 hover:text-primary transition-colors"
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -94,7 +103,13 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-secondary-foreground/70">
-                  Office No. 5, New AI Sharhan Building, AI Nahda 2, Dubai, UAE
+                  Office No. 5, New Al Sharhan Building, Al Nahda 2, Dubai, UAE
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Clock className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-secondary-foreground/70">
+                  Everyday: 09:00 AM - 08:30 PM
                 </span>
               </li>
               <li className="flex items-center gap-3">

@@ -2,15 +2,21 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, MapPin, Calendar, Wallet, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [destination, setDestination] = useState("");
   const [date, setDate] = useState("");
   const [budget, setBudget] = useState("");
+  const navigate = useNavigate();
 
   const handleSearch = () => {
-    console.log({ destination, date, budget });
-    // Navigate to packages with filters
+    const params = new URLSearchParams();
+    if (destination) params.set("q", destination);
+    if (date) params.set("date", date);
+    if (budget) params.set("budget", budget);
+    const query = params.toString();
+    navigate(query ? `/packages?${query}` : "/packages");
   };
 
   return (

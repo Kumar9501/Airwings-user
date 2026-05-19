@@ -126,7 +126,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Our Office</h3>
                     <p className="text-muted-foreground">
-                      Office No. 5, New AI Sharhan Building, AI Nahda 2, Dubai, UAE
+                      Office No. 5, New Al Sharhan Building, Al Nahda 2, Dubai, UAE
                     </p>
                   </div>
                 </div>
@@ -179,8 +179,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Working Hours</h3>
                     <p className="text-muted-foreground">
-                      Sun - Thu: 9:00 AM - 6:00 PM<br />
-                      Fri - Sat: Closed
+                      Everyday: 09:00 AM - 08:30 PM
                     </p>
                   </div>
                 </div>
