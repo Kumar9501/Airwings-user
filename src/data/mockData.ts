@@ -1,10 +1,9 @@
 import baliBg from "@/assets/destination-bali.jpg";
 import maldivesBg from "@/assets/destination-maldives.jpg";
+import thailandImage from "@/assets/thailand.jpg";
 import dubaiImage from "@/assets/Dubai.jpeg";
-import dubaiImage2 from "@/assets/Dubai2.jpeg";
-import dubaiImage3 from "@/assets/Dubai3.jpeg";
 import dubaiImage4 from "@/assets/Dubai4.jpeg";
-import dubaiImage5 from "@/assets/Dubai5.jpeg";
+import vietnamImage from "@/assets/Dubai5.jpeg";
 
 export interface Package {
   id: string;
@@ -71,7 +70,7 @@ export const packages: Package[] = [
     country: "Thailand",
     duration: "5 Days / 4 Nights",
     price: 7999,
-    image: dubaiImage2,
+    image: thailandImage,
     rating: 4.8,
     tag: "Private",
     description: "Enjoy Thailand's beaches, island hopping, night markets, and relaxed tropical stays.",
@@ -129,10 +128,24 @@ export const packages: Package[] = [
     country: "Thailand",
     duration: "6 Days / 5 Nights",
     price: 5799,
-    image: dubaiImage3,
+    image: thailandImage,
     rating: 4.9,
     description: "A family-friendly Thailand break with shopping, city highlights, beach time, and theme parks.",
     inclusions: ["Hotel Stay", "Airport Transfers", "City Tour", "Beach Visit", "Theme Park Tickets"],
+    featured: false,
+  },
+  {
+    id: "7",
+    title: "Vietnam Scenic Escape",
+    location: "Da Nang & Hoi An",
+    country: "Vietnam",
+    duration: "5 Days / 4 Nights",
+    price: 5499,
+    image: vietnamImage,
+    rating: 4.8,
+    tag: "Private",
+    description: "Explore Vietnam with cultural landmarks, coastal views, local food, and relaxed sightseeing.",
+    inclusions: ["Hotel Stay", "Daily Breakfast", "Airport Transfers", "City Tour", "Local Experiences"],
     featured: false,
   },
 ];
@@ -150,15 +163,22 @@ export const destinations: Destination[] = [
     id: "thailand",
     name: "Thailand",
     country: "Thailand",
-    image: dubaiImage4,
+    image: thailandImage,
     packageCount: 10,
   },
   {
     id: "dubai",
     name: "Dubai",
     country: "UAE",
-    image: dubaiImage5,
+    image: dubaiImage4,
     packageCount: 15,
+  },
+  {
+    id: "vietnam",
+    name: "Vietnam",
+    country: "Vietnam",
+    image: vietnamImage,
+    packageCount: 8,
   },
   {
     id: "maldives",
