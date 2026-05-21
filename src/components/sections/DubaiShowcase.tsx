@@ -7,7 +7,7 @@ import burjKhalifaVideo from "@/assets/videos/burj-khalifa.mp4";
 import palmJumeirahVideo from "@/assets/videos/palm-jumeirah.mp4";
 import burjAlArabVideo from "@/assets/videos/burj-al-arab.mp4";
 import dubaiMarinaVideo from "@/assets/videos/dubai-marina.mp4";
-import dubaiHighlightsVideo from "@/assets/Dubai6.mp4";
+import vietnamHighlightsVideo from "@/assets/Dubai6.mp4";
 
 interface Landmark {
   id: string;
@@ -42,10 +42,10 @@ const landmarks: Landmark[] = [
     video: dubaiMarinaVideo,
   },
   {
-    id: "dubai-highlights",
-    name: "Dubai Highlights",
-    description: "City moments and travel views",
-    video: dubaiHighlightsVideo,
+    id: "vietnam-highlights",
+    name: "Vietnam Highlights",
+    description: "Scenic moments and travel views",
+    video: vietnamHighlightsVideo,
   },
 ];
 
